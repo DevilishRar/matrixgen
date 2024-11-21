@@ -16,27 +16,101 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="background-animation"></div>
+    
+    <nav class="navbar">
+        <div class="nav-logo">MATRIX HUB</div>
+        <div class="nav-links">
+            <a href="#generator" class="active">Generator</a>
+            <a href="#features">Features</a>
+            <a href="#presets">Presets</a>
+            <a href="https://discord.gg/traced" target="_blank" class="discord-btn">Join Discord</a>
+        </div>
+    </nav>
+
     <div class="container">
-        <h1 class="title">matrix hub set generator</h1>
-        
-        <div class="main-content">
-            <div class="input-group">
-                <input type="text" id="pingInput" placeholder="Enter ping..." class="ping-input">
-                <button id="generateBtn" class="btn generate-btn">Generate</button>
-                <button id="downloadBtn" class="btn download-btn">Download</button>
-                <button id="showPredBtn" class="btn show-pred-btn">Show Pred</button>
-            </div>
+        <section id="generator" class="section">
+            <h1 class="title glitch" data-text="matrix hub set generator">matrix hub set generator</h1>
             
-            <div id="predDisplay" class="pred-display" style="display: none;">
+            <div class="main-content">
+                <div class="input-group">
+                    <input type="text" id="pingInput" placeholder="Enter ping..." class="ping-input">
+                    <button id="generateBtn" class="btn generate-btn">Generate</button>
+                    <button id="downloadBtn" class="btn">Download</button>
+                    <button id="showPredBtn" class="btn">Show Pred</button>
+                </div>
+                
+                <div id="predDisplay" class="pred-display" style="display: none;"></div>
+            </div>
+        </section>
+
+        <section id="features" class="section features-section">
+            <h2 class="section-title">Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Perfect Prediction</h3>
+                    <p>Advanced algorithms for precise predictions based on your ping</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Setup</h3>
+                    <p>Generate and use your config in seconds</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Undetected</h3>
+                    <p>Stay safe with our regularly updated configurations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Game Support</h3>
+                    <p>Works with multiple popular Roblox games</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="presets" class="section presets-section">
+            <h2 class="section-title">Popular Presets</h2>
+            <div class="presets-grid">
+                <div class="preset-card" data-ping="20">
+                    <h3>Low Ping</h3>
+                    <p>Optimized for 10-30ms</p>
+                    <button class="preset-btn">Use Preset</button>
+                </div>
+                <div class="preset-card" data-ping="90">
+                    <h3>Medium Ping</h3>
+                    <p>Optimized for 60-120ms</p>
+                    <button class="preset-btn">Use Preset</button>
+                </div>
+                <div class="preset-card" data-ping="150">
+                    <h3>High Ping</h3>
+                    <p>Optimized for 120-180ms</p>
+                    <button class="preset-btn">Use Preset</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number" id="usersCount">0</span>
+                <span class="stat-label">Active Users</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="configsCount">0</span>
+                <span class="stat-label">Configs Generated</span>
             </div>
         </div>
 
-        <p class="slogan">Unlock your ultimate potential with our Set Generator!</p>
-        
-        <div class="discord-link">
-            <a href="https://discord.gg/traced" target="_blank">Join our Discord</a>
-        </div>
+        <footer class="footer">
+            <p class="slogan">Unlock your ultimate potential with our Set Generator!</p>
+            <div class="social-links">
+                <a href="https://discord.gg/traced" target="_blank" class="social-btn">Discord</a>
+            </div>
+        </footer>
     </div>
+
+    <div class="notifications"></div>
     <script src="script.js"></script>
 </body>
 </html>
