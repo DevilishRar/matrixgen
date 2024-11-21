@@ -1,0 +1,182 @@
+@font-face {
+    font-family: "Font Awesome 6 Brands Regular";
+    src: url("https://db.onlinewebfonts.com/t/840c587995af767e3b9cd09ab83f946d.eot");
+    src: url("https://db.onlinewebfonts.com/t/840c587995af767e3b9cd09ab83f946d.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/840c587995af767e3b9cd09ab83f946d.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/840c587995af767e3b9cd09ab83f946d.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/840c587995af767e3b9cd09ab83f946d.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/840c587995af767e3b9cd09ab83f946d.svg#Font Awesome 6 Brands Regular")format("svg");
+}
+
+:root {
+    --primary-bg: linear-gradient(180deg, #000000 0%, #00474F 100%);
+    --secondary-bg: #00474F;
+    --accent-color: #2FEAFF;
+    --button-gradient: radial-gradient(50% 50% at 50% 50%, #00535C 0%, #003035 100%);
+    --border-color: #005F69;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--primary-bg);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1093px;
+    background: var(--secondary-bg);
+    border: 0.5px solid var(--accent-color);
+    border-radius: 24px;
+    padding: 2rem;
+    position: relative;
+    transform: scale(1.1);
+}
+
+.title {
+    color: #FFFFFF;
+    text-align: center;
+    font-family: "Font Awesome 6 Brands Regular", sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    max-width: 800px;
+    justify-content: center;
+}
+
+.ping-input {
+    background: #D9D9D9;
+    border: 0.5px solid var(--border-color);
+    border-radius: 18.25px 0 0 18.25px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    width: 250px;
+    height: 60px;
+}
+
+.btn {
+    background: var(--button-gradient);
+    border: 0.5px solid var(--border-color);
+    color: #FFFFFF;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    height: 60px;
+    min-width: 140px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.generate-btn {
+    border-radius: 0;
+    border-left: none;
+}
+
+.btn:not(:last-child) {
+    border-right: none;
+}
+
+.btn:last-child {
+    border-radius: 0 18.25px 18.25px 0;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(47, 234, 255, 0.2);
+}
+
+.pred-display {
+    background: var(--button-gradient);
+    border: 0.5px solid var(--border-color);
+    border-radius: 26.25px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 315px;
+    min-height: 163px;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.slogan {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 3rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.discord-link {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.discord-link a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+}
+
+.discord-link a:hover {
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 1rem;
+        transform: scale(1);
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .ping-input, .btn {
+        width: 100%;
+        border-radius: 18.25px;
+        border: 0.5px solid var(--border-color);
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        width: 85%;
+        transform: scale(1.05);
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .container {
+        width: 80%;
+    }
+}
