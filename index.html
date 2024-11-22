@@ -4,39 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#00474F">
-    <title>Matrix Hub Set Generator</title>
+    <title>Matrix Prediction Generator</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="https://iili.io/277NE4s.png">
-    <meta property="og:title" content="Matrix Hub Set Generator">
-    <meta property="og:description" content="Generate perfect predictions for your ping with Matrix Hub">
+    <meta property="og:title" content="Matrix Prediction Generator">
+    <meta property="og:description" content="Generate perfect predictions for your ping">
     <meta property="og:image" content="https://iili.io/277NE4s.png">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:image" content="https://iili.io/277NE4s.png">
     <link href="https://db.onlinewebfonts.com/c/840c587995af767e3b9cd09ab83f946d?family=Font+Awesome+6+Brands+Regular" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script defer src="https://unpkg.com/@vercel/analytics"></script>
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">matrix hub set generator</h1>
-        
-        <div class="main-content">
-            <div class="input-group">
-                <input type="text" id="pingInput" placeholder="Enter ping..." class="ping-input">
-                <button id="generateBtn" class="btn generate-btn">Generate</button>
-                <button id="downloadBtn" class="btn download-btn">Download</button>
-                <button id="showPredBtn" class="btn show-pred-btn">Show Pred</button>
-            </div>
-            
-            <div id="predDisplay" class="pred-display" style="display: none;">
-            </div>
+    <div class="background-animation"></div>
+    
+    <nav class="navbar">
+        <div class="nav-logo">MATRIX</div>
+        <div class="nav-links">
+            <a href="#generator" class="active">Generator</a>
+            <a href="#features">Features</a>
+            <a href="https://discord.gg/traced" target="_blank" class="discord-btn">Join Discord</a>
         </div>
+    </nav>
 
-        <p class="slogan">Unlock your ultimate potential with our Set Generator!</p>
-        
+    <div class="container">
+        <section id="generator" class="section">
+            <h1 class="title glitch" data-text="matrix prediction generator">matrix prediction generator</h1>
+            
+            <div class="main-content">
+                <div class="input-group">
+                    <input type="text" id="pingInput" placeholder="Enter ping..." class="ping-input">
+                    <button id="generateBtn" class="btn generate-btn">Download</button>
+                    <button id="showPredBtn" class="btn show-pred-btn">Show Pred</button>
+                </div>
+                
+                <div id="predDisplay" class="pred-display" style="display: none;"></div>
+
+                <div class="features-section">
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Precise Predictions</h3>
+                            <p>Accurate X and Y values based on your ping</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Instant Results</h3>
+                            <p>Get your predictions immediately</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Ping Range</h3>
+                            <p>Support for 10-200ms ping</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analytics-section">
+                    <div class="stat-card">
+                        <span id="visitorCount" class="stat-number">-</span>
+                        <span class="stat-label">Unique Visitors</span>
+                    </div>
+                    <div class="stat-card">
+                        <span id="pageViews" class="stat-number">-</span>
+                        <span class="stat-label">Total Views</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <div class="discord-link">
             <a href="https://discord.gg/traced" target="_blank">Join our Discord</a>
         </div>
     </div>
+
+    <div class="notifications"></div>
     <script src="script.js"></script>
 </body>
 </html>
