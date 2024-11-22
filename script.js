@@ -90,7 +90,7 @@ Ping=${ping}`;
 
     showPredBtn.addEventListener('click', () => {
         if (!currentConfig) {
-            alert('Please generate a configuration first');
+            alert('Please download a configuration first');
             return;
         }
 
