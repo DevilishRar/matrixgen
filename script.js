@@ -18,35 +18,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getPredictionValues(ping) {
         const predictions = {
-            '10': { prediction_x: 7.5382, prediction_y: 7.4032 },
-            '20': { prediction_x: 7.5382, prediction_y: 7.4032 },
-            '25': { prediction_x: 7.27, prediction_y: 7.1875 },
-            '30': { prediction_x: 7.27, prediction_y: 7.1875 },
-            '40': { prediction_x: 6.9124, prediction_y: 6.8999 },
-            '50': { prediction_x: 5.331999778747559, prediction_y: 6.824999809265137 },
-            '60': { prediction_x: 5.331999778747559, prediction_y: 6.824999809265137 },
-            '70': { prediction_x: 6.12, prediction_y: 7.9975 },
-            '80': { prediction_x: 6.12, prediction_y: 7.9975 },
-            '90': { prediction_x: 6.12, prediction_y: 7.9975 },
-            '100': { prediction_x: 6.12, prediction_y: 7.9975 },
-            '110': { prediction_x: 6.12, prediction_y: 7.9975 },
-            '120': { prediction_x: 5.88, prediction_y: 7.75249999 },
-            '130': { prediction_x: 5.88, prediction_y: 7.75249999 },
-            '135': { prediction_x: 5.88, prediction_y: 7.75249999 },
-            '140': { prediction_x: 4.5600000000000005, prediction_y: 6.5600000000000005 },
-            '145': { prediction_x: 4.5600000000000005, prediction_y: 6.5600000000000005 },
-            '150': { prediction_x: 4.5600000000000005, prediction_y: 6.5600000000000005 },
-            '155': { prediction_x: 4.5600000000000005, prediction_y: 6.5600000000000005 },
-            '160': { prediction_x: 4.5600000000000005, prediction_y: 6.5600000000000005 },
-            '165': { prediction_x: 4.5600000000000005, prediction_y: 6.5600000000000005 },
-            '170': { prediction_x: 4.08, prediction_y: 6.08 },
-            '175': { prediction_x: 4.08, prediction_y: 6.08 },
-            '180': { prediction_x: 4.08, prediction_y: 6.08 },
-            '185': { prediction_x: 4.08, prediction_y: 6.08 },
-            '190': { prediction_x: 4.08, prediction_y: 6.08 },
-            '200': { prediction_x: 4.141, prediction_y: 4.670999999999999 }
+            20: { x: 6.2, y: 7.4 },
+            30: { x: 6.0, y: 7.2 },
+            40: { x: 7.61, y: 9.8 },
+            50: { x: 7.48, y: 9.31 },
+            60: { x: 4.97, y: 4.81 },
+            70: { x: 7.34, y: 8.345 },
+            80: { x: 6.87, y: 7.91 },
+            90: { x: 6.52, y: 7.54 },
+            100: { x: 6.11, y: 7.29 },
+            110: { x: 5.63, y: 6.24 },
+            120: { x: 5.39, y: 6.13 },
+            130: { x: 5.21, y: 5.94 },
+            140: { x: 4.91, y: 5.76 },
+            150: { x: 4.87, y: 5.68 },
+            170: { x: 4.84, y: 4.67 },
+            180: { x: 4.71, y: 4.52 },
+            190: { x: 4.59, y: 4.38 },
+            200: { x: 4.82, y: 4.21 }
         };
-        return predictions[ping.toString()] || null;
+
+        if (predictions.hasOwnProperty(ping)) {
+            return predictions[ping];
+        }
+
+        return null;
     }
 
     pingInput.addEventListener('input', (e) => {
@@ -71,14 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         currentConfig = {
             ping: ping,
-            prediction_x: predValues.prediction_x,
-            prediction_y: predValues.prediction_y
+            prediction_x: predValues.x,
+            prediction_y: predValues.y
         };
 
         const randomStr = generateRandomString(8);
         const configContent = `[Matrix Hub]
-Prediction_X=${predValues.prediction_x}
-Prediction_Y=${predValues.prediction_y}
+Prediction_X=${predValues.x}
+Prediction_Y=${predValues.y}
 Ping=${ping}`;
 
         const blob = new Blob([configContent], { type: 'text/plain' });
